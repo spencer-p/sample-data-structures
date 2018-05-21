@@ -26,6 +26,7 @@ int main(int argc, char **argv) {
 	insert(dict, "Susan", "Stevenson");
 
 	// Print those values
+	printf("The dict has %d values:\n", size(dict));
 	print_key(dict, "Joe");
 	print_key(dict, "Carol");
 	print_key(dict, "Bill");
@@ -36,6 +37,7 @@ int main(int argc, char **argv) {
 	delete(dict, "Joe");
 
 	// Print those values again
+	printf("The dict has %d values:\n", size(dict));
 	print_key(dict, "Joe");
 	print_key(dict, "Carol");
 	print_key(dict, "Bill");
