@@ -11,7 +11,7 @@ int main(int argc, char **argv) {
 	if (argc > 1) {
 		int cap = atoi(argv[1]);
 		for (int i = 2; i < argc; i++) {
-			printf("hash(\"%s\") = %d\n", argv[i], hash(argv[i])%cap);
+			printf("hash(\"%s\")%%%d = %d\n", argv[i], cap, hash(argv[i])%cap);
 		}
 		return 0;
 	}
