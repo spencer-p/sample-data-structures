@@ -6,6 +6,12 @@ hashmap new_hashmap(int capacity);
 // free_hashmap takes a pointer to a hashmap and frees it.
 void free_hashmap(hashmap *hm);
 
+// size returns the amount of items in the hashmap.
+int size(hashmap hm);
+
+// capacity returns the amount of items that can be stored in the hashmap.
+int capacity(hashmap hm);
+
 // insert sets the value for a given key in a hashmap. hm[key] = value.
 void insert(hashmap hm, char *key, char *value);
 

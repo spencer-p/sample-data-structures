@@ -38,6 +38,16 @@ void free_hashmap(hashmap *hm_p) {
 	*hm_p = NULL;
 }
 
+int size(hashmap hm) {
+	if (hm == NULL) return 0;
+	return hm->size;
+}
+
+int capacity(hashmap hm) {
+	if (hm == NULL) return 0;
+	return hm->cap;
+}
+
 void insert(hashmap hm, char *key, char *value) {
 	if (hm == NULL) return;
 	hm->array[hash(key)%hm->cap] = value;
