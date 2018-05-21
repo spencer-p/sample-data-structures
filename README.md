@@ -38,7 +38,7 @@ hiding pattern in C if you are unfamiliar:
 	  int value
   } foo;
   ```
-* The corresponding file defines a type that is a pointer to `foo`:
+* The corresponding `.h` file defines a type that is a pointer to `foo`:
   ```C
   typedef foo* bar
   ```
