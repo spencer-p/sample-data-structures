@@ -9,7 +9,6 @@ typedef struct private_hashmap {
 	int size;     // The number of elements it currently holds
 } private_hashmap;
 
-// new_hashmap creates a new hashmap with the given capacity.
 hashmap new_hashmap(int capacity) {
 	hashmap new;
 
@@ -33,34 +32,29 @@ hashmap new_hashmap(int capacity) {
 	return new;
 }
 
-// free_hashmap takes a pointer to a hashmap and frees it.
 void free_hashmap(hashmap *hm_p) {
 	free((*hm_p)->array);
 	free(*hm_p);
 	*hm_p = NULL;
 }
 
-// insert sets the value for a given key in a hashmap. hm[key] = value.
 void insert(hashmap hm, char *key, char *value) {
 	if (hm == NULL) return;
 	hm->array[hash(key)%hm->cap] = value;
 	hm->size++;
 }
 
-// get returns the string value for a given key. hm[key].
 char *get(hashmap hm, char *key) {
 	if (hm == NULL) return NULL;
 	return hm->array[hash(key)%hm->cap];
 }
 
-// delete removes the value for a given key.
 void delete(hashmap hm, char *key) {
 	if (hm == NULL) return;
 	hm->array[hash(key)%hm->cap] = NULL;
 	hm->size--;
 }
 
-// hash computes the BSD checksum of the string.
 unsigned short hash(char *string) {
 	int len = strlen(string);
 	unsigned short hash = 0;
