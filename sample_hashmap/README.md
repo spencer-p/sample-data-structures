@@ -29,3 +29,17 @@ to store an array of linked lists, such that we expect each linked list to only
 have one element, but in the event of a collision another node is appended. Each
 node will also contain its string key (or the un-modulo'd hash) so that we can
 differentiate between them.
+
+I included a "hash testing" mode. If you pass any arguments to the program, it
+will try to compute their hashes. For example, if you run
+```bash
+./main 16 Joe Carol Bill Susan
+```
+then you get the output
+```
+hash("Joe")%16 = 15
+hash("Carol")%16 = 0
+hash("Bill")%16 = 4
+hash("Susan")%16 = 15
+```
+This comes in handy when trying to work out behaviour by hand.
